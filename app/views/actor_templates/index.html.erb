@@ -5,34 +5,42 @@
 <hr>
 
 <form action="/insert_actor" method="post">
+  <div>
+    <label for="name_box">
+      Name
+    </label>
 
-<div>
-<label for="name_field">Name</label>
- <input id="name_field" type="text" name="the_name">
- </div>
+    <input type="text" id="name_box" name="the_name">
+  </div>
 
-<div>
- <label for="dob_field">Dob</label>
- <input id="dob_field" type="date" name="the_dob">
- </div>
+  <div>
+    <label for="dob_box">
+      Dob
+    </label>
 
-<div>
- <label for="bio_field">Bio</label>
- <textarea id="bio_field" type="text" name="the_duration" rows="3"> </textarea>
- </div>
+    <input type="date" id="dob_box" name="the_dob">
+  </div>
 
-<div>
- <label for="image_field">Image</label>
- <input id="image_field" type="text" name="the_image">
- </div>
+  <div>
+    <label for="bio_box">
+      Bio
+    </label>
 
- <button type="submit" >
-  Create actor
- </button>
+    <input id="bio_box" name="the_bio">
+  </div>
 
+  <div>
+    <label for="image_box">
+      Image
+    </label>
+
+    <input type="text" id="image_box" name="the_image">
+  </div>
+
+  <button>
+    Create actor
+  </button>
 </form>
-
-<hr>
 
 <table border="1">
   <tr>
