@@ -19,6 +19,7 @@ class ActorsController < ApplicationController
     actor = Actor.new
     actor.image = params.fetch("the_image")
     actor.name = params.fetch("the_name")
+    actor.bio = params.fetch("the_bio")
     actor.dob= params.fetch("the_dob")
 
     actor.save
@@ -39,4 +40,23 @@ class ActorsController < ApplicationController
 
 
   end
+
+  def update
+
+    the_id = params.fetch("path_id")
+    the_actor = Actor.where({ :id => the_id}).at(0)
+
+    the_actor.image = params.fetch("the_image")
+    the_actor.name = params.fetch("the_name")
+    the_actor.bio = params.fetch("the_bio")
+    the_actor.dob= params.fetch("the_dob")
+
+    the_actor.save
+
+    redirect_to("/actors/#{the_actor.id}")
+
+
+    
+  end
+
 end
