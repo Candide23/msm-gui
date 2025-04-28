@@ -16,7 +16,6 @@ class MoviesController < ApplicationController
 
     redirect_to("/movies")
     
-
   end
   def index
     matching_movies = Movie.all
@@ -32,5 +31,16 @@ class MoviesController < ApplicationController
     @the_movie = matching_movies.at(0)
 
     render({ :template => "movie_templates/show" })
+  end
+
+  def destroy
+
+    the_id = params.fetch("an_id")
+   the_movie = Movie.where({:id => the_id}).at(0)
+
+   the_movie.destroy
+
+   redirect_to("/movies")
+    
   end
 end
